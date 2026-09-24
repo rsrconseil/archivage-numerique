@@ -54,7 +54,7 @@ Le fichier `.gitignore` refuse `rclone.conf`, `*.env`, `*.key` et les journaux.
 
 Ce dossier est la copie de travail. Il est dans OneDrive, donc déjà répliqué, mais OneDrive ne donne ni historique lisible ni comparaison entre versions.
 
-Un dépôt git local est initialisé ici. La copie GitHub est prévue sur l'organisation `rsrconseil`, déjà utilisée pour AI-CDD, en dépôt **privé** `archivage-numerique`. Elle sert à trois choses : historique des changements de configuration, relecture avant modification, et point de reprise si le dossier OneDrive est corrompu. Aucun secret n'y transite, les modèles ne contiennent que des espaces réservés.
+Ce dossier est un dépôt git, poussé sur GitHub dans le dépôt **privé** [rsrconseil/archivage-numerique](https://github.com/rsrconseil/archivage-numerique) (créé le 24/09/2026). Elle sert à trois choses : historique des changements de configuration, relecture avant modification, et point de reprise si le dossier OneDrive est corrompu. Aucun secret n'y transite, les modèles ne contiennent que des espaces réservés.
 
 Précaution connue : un dépôt git dans un dossier OneDrive peut voir ses fichiers internes synchronisés en cours d'écriture. C'est déjà le cas pour AI-CDD sans incident signalé. Si des erreurs git apparaissent, déplacer le dépôt hors de OneDrive et ne garder ici qu'un raccourci.
 
@@ -69,10 +69,11 @@ Précaution connue : un dépôt git dans un dossier OneDrive peut voir ses fichi
 - [x] Premier lancement réduit sur Admin RSR Conseil : 1,5 Go copiés, seconde passe en 11 s, inventaire déposé (23/09/2026)
 - [x] Exécutions complètes : v3 (jeton renouvelé), v3.1 (limitation de débit), v3.2 (sous-sites). Le 24/09/2026 : 32 bibliothèques OK, 6 sites exclus, Projets Passés copié (114 Go)
 - [x] `nas-pull/` écrit et testé sur ce PC contre un bucket existant (23/09/2026)
-- [ ] `nas-pull/` : clé lecture seule, remote `scw-lecture`, première copie, tâche planifiée (INSTALLATION.md)
+- [x] `nas-pull/` : clé lecture seule, remote `scw-lecture`, tâche planifiée installée, première copie lancée le 24/09/2026 (en cours)
 - [ ] Instantanés quotidiens sur les trois partages du NAS (console UniFi)
 - [x] Amorçage : NAS réorganisé (Conseil 97, M&A 14), envoyé dans rsr-archives et rsr-perso, vérifié fichier par fichier, staging nettoyé (23-24/09/2026). Restent à arbitrer : Carso et Adcreches (versions NAS de 2021, SharePoint plus récent)
-- [ ] Archiver les projets 2020 (dont Nuage) et un dossier 2025 avec `archivage-annuel/`, après l'exécution v3.1 du job ; 2021 en janvier 2027
+- [x] Premier dossier archivé avec `archivage-annuel/` : 2509 - Davitec x Platina - Low Energy (24/09/2026)
+- [ ] Archiver les projets 2020 (dont Nuage) ; 2021 en janvier 2027
 - [ ] Réécrire PROCEDURE-Archivage.md pour la voie A
 - [ ] Test de restauration annuel, premier passage
-- [ ] Dépôt GitHub privé `rsrconseil/archivage-numerique`
+- [x] Dépôt GitHub privé `rsrconseil/archivage-numerique`, premier commit poussé le 24/09/2026
