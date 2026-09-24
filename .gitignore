@@ -1,0 +1,20 @@
+# Secrets : ne jamais versionner
+rclone.conf
+rclone-perso.conf
+*.env
+*.key
+*.pem
+
+# Journaux et fichiers temporaires
+*.log
+z-logs/
+*.tmp
+~$*
+
+# Fichiers Office de travail (la présentation d'origine reste versionnée)
+*.pptx
+!2511 - Organisation de l'archivage.pptx
+
+# OneDrive / Windows
+desktop.ini
+Thumbs.db

@@ -1,0 +1,42 @@
+﻿{
+  "_commentaire": "Configuration unique de l'archivage RSR Conseil. Modifier ici, jamais dans le script.",
+
+  "rclone": "rclone",
+  "sevenZip": "C:\\Program Files\\7-Zip\\7z.exe",
+
+  "journal": "X:\\z-logs\\archivage-journal.csv",
+  "logDir": "X:\\z-logs",
+  "logRetentionDays": 365,
+
+  "corbeille": "X:\\z-corbeille",
+  "corbeilleRetentionDays": 90,
+
+  "syncs": [
+    { "nom": "admin",         "remote": "onedrive-admin:",                    "dest": "X:\\Admin RSR Conseil" },
+    { "nom": "projets-conseil", "remote": "onedrive-projets-conseil:",        "dest": "X:\\Projets conseil traditionnel" },
+    { "nom": "projets-ma",    "remote": "onedrive-projets-ma:",               "dest": "X:\\Projets M&A" },
+    { "nom": "propositions",  "remote": "onedrive-propositions-commerciales:", "dest": "X:\\Propositions commerciales" },
+    { "nom": "vie-cabinet",   "remote": "onedrive-vie-cabinet:",              "dest": "X:\\Vie du cabinet" },
+    { "nom": "jvmp",          "remote": "onedrive-je-vends-ma-pme:",          "dest": "X:\\je-vends-ma-pme.com" },
+    { "nom": "perso-rsr",     "remote": "onedrive-perso-rsr:",                "dest": "Z:\\OneDrive - RSR" }
+  ],
+
+  "archives": [
+    {
+      "nom": "conseil",
+      "staging": "Y:\\temp-conseil",
+      "zipDir": "Y:\\upload-conseil",
+      "bucket": "remote-sw-paris:backup-rsrconseil",
+      "destinationLocale": "X:\\Projets Passés"
+    },
+    {
+      "nom": "ma",
+      "staging": "Y:\\temp-ma",
+      "zipDir": "Y:\\upload-ma",
+      "bucket": "remote-sw-paris:backup-projetsma",
+      "destinationLocale": "X:\\Projets M&A passés"
+    }
+  ],
+
+  "ageArchivageAnnees": 5
+}

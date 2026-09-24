@@ -1,0 +1,1 @@
+rclone copy "y:\upload-ma" remote-sw-paris:backup-projetsma --s3-storage-class GLACIER --progress --log-file="y:\z-logs\copy-projets-ma.log" --log-level INFO

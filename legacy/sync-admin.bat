@@ -1,0 +1,1 @@
+rclone sync onedrive-admin: "X:\Admin RSR Conseil" --progress --log-file="X:\z-logs\sync-admin.log" --log-level INFO

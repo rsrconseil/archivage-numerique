@@ -1,0 +1,39 @@
+{
+  "_commentaire": "Copie des buckets Scaleway vers le NAS UniFi. Tourne sur le PC de Raphaël quand le NAS est joignable. Chemins UNC obligatoires : les lecteurs mappés (X:, Y:, Z:) ne sont pas visibles d'une tâche planifiée.",
+  "rclone": "rclone",
+  "remote": "scw-lecture:",
+  "nas": "192.168.9.139",
+  "logDir": "%LOCALAPPDATA%\\RSR-Archivage\\logs",
+  "journal": "%LOCALAPPDATA%\\RSR-Archivage\\nas-pull-journal.csv",
+  "logRetentionDays": 365,
+  "frequenceJours": 7,
+  "corbeilleRetentionDays": 90,
+  "copies": [
+    {
+      "nom": "miroir",
+      "bucket": "rsr-miroir",
+      "dest": "\\\\192.168.9.139\\Synchro_OneDrive"
+    },
+    {
+      "nom": "archives",
+      "bucket": "rsr-archives",
+      "dest": "\\\\192.168.9.139\\Sauvegarde_Projets_historiques"
+    },
+    {
+      "nom": "perso",
+      "bucket": "rsr-perso",
+      "dest": "\\\\192.168.9.139\\Personal-Drive",
+      "exclusions": [
+        "Photos/**",
+        "*.pst"
+      ],
+      "_pourquoi": "Photos et archives Outlook vivent sur le NAS (les .pst sont modifiés par Outlook) ; copiés une fois dans le cloud par Amorcer-Archives.ps1, jamais écrasés par nas-pull."
+    }
+  ],
+  "exclusions": [
+    "_corbeille/**",
+    "_inventaire/**",
+    "z-logs/**",
+    "z-corbeille/**"
+  ]
+}

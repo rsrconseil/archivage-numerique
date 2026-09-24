@@ -1,0 +1,1 @@
+rclone sync onedrive-projets-ma: "X:\Projets M&A" --progress --log-file="X:\z-logs\sync-projets-ma.log" --log-level INFO

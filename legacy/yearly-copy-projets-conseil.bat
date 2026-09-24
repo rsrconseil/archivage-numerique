@@ -1,0 +1,1 @@
+rclone copy "y:\upload-conseil" remote-sw-paris:backup-rsrconseil --s3-storage-class GLACIER --progress --log-file="y:\z-logs\copy-projets-conseil.log" --log-level INFO

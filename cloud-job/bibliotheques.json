@@ -1,0 +1,112 @@
+﻿{
+    "_commentaire":  "Périmètre du miroir cloud. \u0027dossier\u0027 = préfixe dans le bucket. \u0027drive_id\u0027 est rempli par Get-DriveIds.ps1 une fois l\u0027application Entra créée. Source : configuration OneDrive du PC de Raphaël, 23/09/2026.",
+    "tenant_hostname":  "rsrci.sharepoint.com",
+    "tenant_id":  "7356cc20-2024-4882-8256-7fc44d0bfa16",
+    "bibliotheques":  [
+                          {
+                              "nom":  "projets-conseil",
+                              "dossier":  "Projets conseil traditionnel",
+                              "site":  "https://rsrci.sharepoint.com/sites/Projetsencours",
+                              "bibliotheque":  "Documents",
+                              "drive_id":  "b!-b44A74TLUCkWWIX-swXWLib3lhO7SVNg9Gh4P5P0u24IerH_FdOQZN0TPRkZ3Hd"
+                          },
+                          {
+                              "nom":  "projets-ma",
+                              "dossier":  "Projets M\u0026A",
+                              "site":  "https://rsrci.sharepoint.com/sites/ProjetsJVMP",
+                              "bibliotheque":  "Documents",
+                              "drive_id":  "b!hKAJRb2VuEyHzK4OixBlZCD_Npk6GEJBnSt2-5qolXjPAf8uwoROSJqsA8KEVi_W"
+                          },
+                          {
+                              "nom":  "projets-passes",
+                              "dossier":  "Projets Passés",
+                              "site":  "https://rsrci.sharepoint.com",
+                              "bibliotheque":  "Projets Passés",
+                              "drive_id":  "b!aCuE1AkVGkScE42_BPC6j1-FevX67gtOuazyqDvv4cNxFh8eNEHXSIng4E9XVlzG"
+                          },
+                          {
+                              "nom":  "admin",
+                              "dossier":  "Admin RSR Conseil",
+                              "site":  "https://rsrci.sharepoint.com/sites/AdminRSRConseil",
+                              "bibliotheque":  "Documents",
+                              "drive_id":  "b!eAHkRCkenE6rLPmihJaij0fsnjBbl-VMj53PfysnIBhu54qGW3TnRKgqKRBy9Wpt"
+                          },
+                          {
+                              "nom":  "vie-cabinet",
+                              "dossier":  "Vie du cabinet",
+                              "site":  "https://rsrci.sharepoint.com/sites/Vieducabinet",
+                              "bibliotheque":  "Documents",
+                              "drive_id":  "b!aPIfXVyxtU-9FWzLKDJkx_1aV-MPz09Esh-8HFf2V20ERly0684uTL8hFtgr82ci"
+                          },
+                          {
+                              "nom":  "propositions",
+                              "dossier":  "Propositions commerciales",
+                              "site":  "https://rsrci.sharepoint.com/sites/Propositionscommerciales",
+                              "bibliotheque":  "Documents",
+                              "drive_id":  "b!-y7onOq3iEmB4w8YY3gRW3xLwvCTK_BEqvZh5W2UcsFNQ8xrHna_R6DRsheQKnly"
+                          },
+                          {
+                              "nom":  "jvmp",
+                              "dossier":  "je-vends-ma-pme.com",
+                              "site":  "https://rsrci.sharepoint.com/sites/equipe",
+                              "bibliotheque":  "Documents",
+                              "drive_id":  "b!F98FS2jcIU-vnV2d4b2Uz35wvGl0mSRGvjVOuxX_-i0hutMSgwsxTKm_9JOzVEht"
+                          },
+                          {
+                              "nom":  "datarooms",
+                              "dossier":  "Datarooms RSR Conseil",
+                              "site":  "https://rsrci.sharepoint.com/sites/DataroomsRSRConseil",
+                              "bibliotheque":  "Documents",
+                              "drive_id":  "b!asarhjoS2EqG-3SECF8nEGfMbMz7CihCpSQ01isdBHDrtL72hWy7TaxMYOlgeO1M"
+                          },
+                          {
+                              "nom":  "codir",
+                              "dossier":  "CODIR",
+                              "site":  "https://rsrci.sharepoint.com/sites/CODIR",
+                              "bibliotheque":  "Documents",
+                              "drive_id":  "b!h3IN-XmzjkOlel_fD83pAd2QH2nYrQFIp9nLimf84PlAP2BTHeubTpEggDv8_m6A"
+                          },
+                          {
+                              "nom":  "ergea-paros",
+                              "dossier":  "Teams/Ergea-Projet Paros",
+                              "site":  "https://rsrci.sharepoint.com/sites/Ergea-ProjetParos",
+                              "bibliotheque":  "Documents",
+                              "drive_id":  "b!rYr_94GJvE6yNRX83JCxFu3X6ZX0C_NMvuG6DIPm-OM9pho4layhSaynGJKsTt2R"
+                          },
+                          {
+                              "nom":  "2606-ossoul",
+                              "dossier":  "Teams/2606 - Projet Ossoul",
+                              "site":  "https://rsrci.sharepoint.com/sites/2606-ProjetOssoul",
+                              "bibliotheque":  "Documents",
+                              "drive_id":  "b!1_4VYtoehUm88tP7i5HKTe3X6ZX0C_NMvuG6DIPm-OM9pho4layhSaynGJKsTt2R"
+                          },
+                          {
+                              "nom":  "2606-ixo-clear",
+                              "dossier":  "Teams/2606 - Ixo PE - Projet Clear",
+                              "site":  "https://rsrci.sharepoint.com/sites/2606-IxoPE-ProjetClear",
+                              "bibliotheque":  "Documents",
+                              "drive_id":  "b!8I3rxt1lK0KDh1qiqAgNPzjemy8yewVCjmbKxvixd8Cqut283YHuRqsMPSG6XblS"
+                          },
+                          {
+                              "nom":  "2606-bubble",
+                              "dossier":  "Teams/2606 - Projet Bubble",
+                              "site":  "https://rsrci.sharepoint.com/sites/2606-ProjetBubble",
+                              "bibliotheque":  "Documents",
+                              "drive_id":  "b!ygxEONrjY0yFeJJyflyuGDjemy8yewVCjmbKxvixd8Cqut283YHuRqsMPSG6XblS"
+                          },
+                          {
+                              "nom":  "2609-feed-vdd",
+                              "dossier":  "Teams/2609 - Projet Feed - VDD",
+                              "site":  "https://rsrci.sharepoint.com/sites/2609-ProjetFeed-VDD",
+                              "bibliotheque":  "Documents",
+                              "drive_id":  "b!Ts9qTNJvPEq0bhPo_p800O3Xh-bfBG1Go9WfaXsRA-8SW-3IyafaSbA72q0kcSvm"
+                          }
+                      ],
+    "perso":  {
+                  "_commentaire":  "Traité à part : bucket rsr-perso, secret et job distincts, identifiants d\u0027application distincts si souhaité.",
+                  "nom":  "perso-rsr",
+                  "utilisateur":  "raphael@rsr-conseil.fr",
+                  "site":  "https://rsrci-my.sharepoint.com/personal/raphael_rsr-conseil_fr",
+                  "drive_id":  "b!V1jW6uOOEUyU2_IvQXskrFpY2vUdndJGmEzdmEgWqYLKIVXfrAYgQ5pt4RF7y0bY"
+              }
+}

@@ -1,0 +1,1 @@
+rclone sync onedrive-je-vends-ma-pme: "X:\je-vends-ma-pme.com" --progress --log-file="X:\z-logs\sync-jvmp.log" --log-level INFO

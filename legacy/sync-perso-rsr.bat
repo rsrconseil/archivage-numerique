@@ -1,0 +1,1 @@
+rclone sync onedrive-perso-rsr: "Z:\OneDrive - RSR" --progress --log-file="Z:\z-logs\sync-perso-rsr.log" --log-level INFO

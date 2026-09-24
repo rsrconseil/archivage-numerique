@@ -1,0 +1,1 @@
+rclone sync onedrive-propositions-commerciales: "X:\Propositions commerciales" --progress --log-file="X:\z-logs\sync-propositions.log" --log-level INFO

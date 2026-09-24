@@ -1,0 +1,1 @@
+rclone sync onedrive-projets-conseil: "X:\Projets conseil traditionnel" --progress --log-file="X:\z-logs\sync-projets-conseil.log" --log-level INFO

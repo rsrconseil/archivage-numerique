@@ -1,0 +1,1 @@
+rclone sync onedrive-vie-cabinet: "X:\Vie du cabinet" --progress --log-file="X:\z-logs\sync-vie-cabinet.log" --log-level INFO
