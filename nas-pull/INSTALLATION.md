@@ -42,6 +42,10 @@ powershell -ExecutionPolicy Bypass -File "...\nas-pull\Installer-Tache.ps1"
 
    Elle se déclenche chaque jour à 10 h et à chaque ouverture de session. Le script décide seul : rien à faire si la dernière réussite a moins de 7 jours ou si le NAS ne répond pas, sinon copie.
 
+## Longue copie et mise en veille
+
+La première copie dure des heures ; le PC se met en veille après 3 h sans activité sur secteur. Pour une copie longue, lancer en parallèle `Garder-Eveille.ps1` : il retient la veille tant que le verrou de nas-pull existe, comme le ferait un lecteur vidéo, sans modifier les réglages, et se termine seul. Il ne protège pas d'un couvercle fermé ni d'une veille demandée à la main. Les copies hebdomadaires suivantes durent quelques minutes et n'en ont pas besoin.
+
 ## Contrôle mensuel (2 min)
 
 ```powershell
