@@ -17,7 +17,7 @@ Add-Type -Namespace RSR -Name Veille -MemberDefinition @'
 [DllImport("kernel32.dll", SetLastError = true)]
 public static extern uint SetThreadExecutionState(uint esFlags);
 '@
-$ES_CONTINUOUS = [uint32]0x80000000; $ES_SYSTEM_REQUIRED = [uint32]0x00000001
+$ES_CONTINUOUS = [uint32]2147483648; $ES_SYSTEM_REQUIRED = [uint32]1   # 0x80000000 et 0x00000001
 $fin = (Get-Date).AddHours($MaxHeures)
 Write-Host "Gardien de veille actif tant que $verrou existe (au plus jusqu'à $fin)."
 try {
