@@ -169,7 +169,11 @@ function Invoke-Status {
 # ---------------------------------------------------------------- exécution
 
 Write-Host ("=== nas-pull : {0}{1} — {2} ===" -f $Action, $(if ($DryRun) { ' (SIMULATION)' } else { '' }), (Get-Date)) -ForegroundColor Cyan
-switch ($Action) { 'Sync' { Invoke-Sync } 'Check' { Invoke-Check } 'Status' { Invoke-Status } }
+# Transcription complète de la session PowerShell (diagnostic si le processus meurt sans journal)
+if ($Action -eq 'Sync') { try { Start-Transcript -Path (Join-Path $LogDir "transcript-$Horodatage.txt") -Force | Out-Null } catch {} }
+try {
+    switch ($Action) { 'Sync' { Invoke-Sync } 'Check' { Invoke-Check } 'Status' { Invoke-Status } }
+} finally { try { Stop-Transcript | Out-Null } catch {} }
 if ($script:Echecs -gt 0) { Write-Host "=== Terminé avec $($script:Echecs) échec(s) ===" -ForegroundColor Red; exit 1 }
 Write-Host "=== Terminé ===" -ForegroundColor Green
 exit 0
