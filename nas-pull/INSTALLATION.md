@@ -56,8 +56,8 @@ La section « Dernières copies » doit montrer les trois cibles à moins de 14 
 
 ## Points connus
 
-- **Noms de fichiers.** Windows refuse certains caractères (`:`, `?`, `*`) et les noms terminés par un point ou un espace ; rclone les transcrit automatiquement en équivalents visuels. Les chemins très longs peuvent en revanche échouer côté NAS : ils apparaissent alors en `ECHEC` dans le journal avec le fichier en cause dans le log. La solution est de renommer le fichier dans SharePoint.
-- **Le partage Synchro_OneDrive contient encore le miroir de décembre 2025** fait directement depuis SharePoint. La première copie depuis le bucket le réorganisera par site et bibliothèque ; les anciens dossiers de premier niveau iront dans `z-corbeille`. C'est volumineux mais sans risque, et purgé à 90 jours.
+- **Noms de fichiers.** Mesuré le 25/09/2026 : le NAS UniFi refuse tout **nom de fichier de plus de 143 caractères** (extension comprise ; les accents comptent double), quelle que soit la longueur du chemin. Windows et le cloud les acceptent, donc ces fichiers sont bien dans le bucket mais pas sur le NAS. Ils apparaissent dans le log avec « The filename, directory name, or volume label syntax is incorrect » et sont listés dans `%LOCALAPPDATA%\RSR-Archivageichiers-a-renommer.txt` ; la solution est de raccourcir leur nom dans SharePoint. Grâce à `--ignore-errors`, ces échecs n'empêchent plus le déplacement en corbeille de ce qui a disparu du bucket, mais ils laissent la cible en `ECHEC` dans le journal tant qu'ils existent. Première copie du 24/09 : 11 fichiers concernés sur 163 000.
+- **L'ancien miroir de décembre 2025** (Synchro_OneDrive) et l'ancien « OneDrive - RSR » (Personal-Drive) sont déplacés dans `z-corbeille` par la première copie qui se termine sans erreur d'entrée-sortie, ou avec `--ignore-errors`. Purgés à 90 jours.
 - **Le NAS n'est pas joignable hors du cabinet** sans VPN. Voir avec la Dream Machine (Teleport ou WireGuard) si des absences longues sont fréquentes.
 
 ## Amorçage : ce qui est déjà sur le NAS (une fois, avant la première copie)

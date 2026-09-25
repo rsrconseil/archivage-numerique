@@ -116,6 +116,10 @@ function Invoke-Sync {
         $rcArgs = @('sync', "$($Config.remote)$($c.bucket)", $c.dest,
                   '--backup-dir', $corbeille,
                   '--fast-list', '--transfers', '8', '--checkers', '16',
+                  # --ignore-errors : quelques fichiers aux noms trop longs pour le NAS échouent à chaque passage ;
+                  # sans ce drapeau rclone refuserait de déplacer en corbeille ce qui a disparu du bucket. La source
+                  # (S3) est listée de façon fiable, le déplacement en corbeille reste sûr, et les échecs restent journalisés.
+                  '--ignore-errors',
                   '--retries', '3', '--low-level-retries', '10',
                   '--log-file', $log, '--log-level', 'INFO', '--stats', '5m', '--stats-one-line')
         foreach ($e in @($Config.exclusions) + @($c.exclusions)) { if ($e) { $rcArgs += @('--exclude', $e) } }
