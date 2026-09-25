@@ -69,7 +69,7 @@ Précaution connue : un dépôt git dans un dossier OneDrive peut voir ses fichi
 - [x] Premier lancement réduit sur Admin RSR Conseil : 1,5 Go copiés, seconde passe en 11 s, inventaire déposé (23/09/2026)
 - [x] Exécutions complètes : v3 (jeton renouvelé), v3.1 (limitation de débit), v3.2 (sous-sites). Le 24/09/2026 : 32 bibliothèques OK, 6 sites exclus, Projets Passés copié (114 Go)
 - [x] `nas-pull/` écrit et testé sur ce PC contre un bucket existant (23/09/2026)
-- [x] `nas-pull/` : clé lecture seule, remote `scw-lecture`, tâche planifiée installée, première copie lancée le 24/09/2026 (en cours)
+- [x] `nas-pull/` : clé lecture seule, remote `scw-lecture`, tâche planifiée installée, première copie faite le 24/09/2026 : 163 000 fichiers, 11 refusés par le NAS (noms trop longs) ; second passage le 25/09 pour mettre l'ancien miroir en corbeille
 - [ ] Instantanés quotidiens sur les trois partages du NAS (console UniFi)
 - [x] Amorçage : NAS réorganisé (Conseil 97, M&A 14), envoyé dans rsr-archives et rsr-perso, vérifié fichier par fichier, staging nettoyé (23-24/09/2026). Restent à arbitrer : Carso et Adcreches (versions NAS de 2021, SharePoint plus récent)
 - [x] Premier dossier archivé avec `archivage-annuel/` : 2509 - Davitec x Platina - Low Energy (24/09/2026)
