@@ -70,10 +70,10 @@ Précaution connue : un dépôt git dans un dossier OneDrive peut voir ses fichi
 - [x] Exécutions complètes : v3 (jeton renouvelé), v3.1 (limitation de débit), v3.2 (sous-sites). Le 24/09/2026 : 32 bibliothèques OK, 6 sites exclus, Projets Passés copié (114 Go)
 - [x] `nas-pull/` écrit et testé sur ce PC contre un bucket existant (23/09/2026)
 - [x] `nas-pull/` : clé lecture seule, remote `scw-lecture`, tâche planifiée installée, première copie faite le 24/09/2026 : 163 000 fichiers, 11 refusés par le NAS (noms trop longs) ; second passage le 25/09 pour mettre l'ancien miroir en corbeille
-- [ ] Instantanés quotidiens sur les trois partages du NAS (console UniFi)
+- [x] Instantanés sur les trois partages du NAS, console UniFi (25/09/2026)
 - [x] Amorçage : NAS réorganisé (Conseil 97, M&A 14), envoyé dans rsr-archives et rsr-perso, vérifié fichier par fichier, staging nettoyé (23-24/09/2026). Restent à arbitrer : Carso et Adcreches (versions NAS de 2021, SharePoint plus récent)
 - [x] Premier dossier archivé avec `archivage-annuel/` : 2509 - Davitec x Platina - Low Energy (24/09/2026)
-- [ ] Archiver les projets 2020 (dont Nuage) ; 2021 en janvier 2027
+- [ ] Janvier 2027 : archiver 2021 et rattraper 2020 (15 conseil + 7 M&A dont Nuage), supprimer les 6 orphelins du bucket (sans-nom, All Company, Project Web App, Datarooms externes/Pages, /Images de la collection de sites, /PersistedManagedNavigationList…)
 - [x] PROCEDURE-Archivage.md réécrite pour la voie A (25/09/2026)
-- [ ] Test de restauration annuel, premier passage
+- [ ] Test de restauration annuel, premier passage : janvier 2027, avec l'archivage (rappel programmé le 11/01/2027)
 - [x] Dépôt GitHub privé `rsrconseil/archivage-numerique`, premier commit poussé le 24/09/2026
