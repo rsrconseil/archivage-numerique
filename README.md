@@ -20,7 +20,7 @@ Personne n'a de machine à laisser allumée : le job cloud est déclenché par S
 ```
 2511-Archivage Numérique/
 ├── README.md                     ce fichier
-├── PROCEDURE-Archivage.md        rituels mensuel et annuel, restauration (à mettre à jour pour la voie A)
+├── PROCEDURE-Archivage.md        procédure d'exploitation v3 : contrôle mensuel, année N-5, test de restauration, restaurer, renouvellements
 ├── 2511 - Organisation de l'archivage.pptx   intention d'origine, novembre 2025
 ├── cloud-job/                    miroir SharePoint -> Scaleway, sans machine locale
 │   ├── DEPLOIEMENT.md            pas à pas : Entra ID, Scaleway, premier lancement, contrôle mensuel
@@ -74,6 +74,6 @@ Précaution connue : un dépôt git dans un dossier OneDrive peut voir ses fichi
 - [x] Amorçage : NAS réorganisé (Conseil 97, M&A 14), envoyé dans rsr-archives et rsr-perso, vérifié fichier par fichier, staging nettoyé (23-24/09/2026). Restent à arbitrer : Carso et Adcreches (versions NAS de 2021, SharePoint plus récent)
 - [x] Premier dossier archivé avec `archivage-annuel/` : 2509 - Davitec x Platina - Low Energy (24/09/2026)
 - [ ] Archiver les projets 2020 (dont Nuage) ; 2021 en janvier 2027
-- [ ] Réécrire PROCEDURE-Archivage.md pour la voie A
+- [x] PROCEDURE-Archivage.md réécrite pour la voie A (25/09/2026)
 - [ ] Test de restauration annuel, premier passage
 - [x] Dépôt GitHub privé `rsrconseil/archivage-numerique`, premier commit poussé le 24/09/2026
