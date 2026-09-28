@@ -34,13 +34,15 @@ powershell -ExecutionPolicy Bypass -File "...\nas-pull\NasPull.ps1" -Action Sync
 powershell -ExecutionPolicy Bypass -File "...\nas-pull\NasPull.ps1" -Action Sync -Force
 ```
 
-5. **Tâche planifiée** :
+5. **Installation locale et tâche planifiée** :
 
 ```powershell
 powershell -ExecutionPolicy Bypass -File "...\nas-pull\Installer-Tache.ps1"
 ```
 
-   Elle se déclenche chaque jour à 10 h et à chaque ouverture de session. Le script décide seul : rien à faire si la dernière réussite a moins de 7 jours ou si le NAS ne répond pas, sinon copie.
+   Le script copie les fichiers d'exécution dans `C:\RSR\Archivage\nas-pull` (hors OneDrive) et crée la tâche qui s'y réfère. Elle se déclenche chaque jour à 10 h et à chaque ouverture de session. Le script décide seul : rien à faire si la dernière réussite a moins de 7 jours ou si le NAS ne répond pas, sinon copie. **Après toute modification des fichiers de nas-pull dans le dépôt, relancer l'installateur** pour rafraîchir la copie locale.
+
+   Pourquoi hors OneDrive : le 26/09/2026, deux minutes après un démarrage de la tâche, `NasPull.ps1` et la tâche planifiée ont disparu sans intervention humaine et sans trace lisible. Suspects : OneDrive, ou la protection Windows face à un script PowerShell caché lancé par une tâche. La tâche tourne désormais depuis un dossier local, en fenêtre réduite et non cachée, avec une description explicite. Si cela se reproduit : Sécurité Windows > Protection contre les virus et menaces > Historique de protection, puis, le cas échéant, ajouter `C:\RSR\Archivage` aux exclusions.
 
 ## Longue copie et mise en veille
 
