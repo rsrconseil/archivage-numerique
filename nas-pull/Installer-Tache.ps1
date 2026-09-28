@@ -1,24 +1,42 @@
 ﻿<#
 .SYNOPSIS
-    Crée (ou remplace) la tâche planifiée « RSR - Archivage - Copie NAS » sur ce PC.
+    Installe nas-pull dans un dossier local hors OneDrive (C:\RSR\Archivage\nas-pull) et crée
+    (ou remplace) la tâche planifiée « RSR - Archivage - Copie NAS ».
 
 .DESCRIPTION
-    Déclenchement : chaque jour à 10 h, plus à chaque ouverture de session (avec 5 min de délai).
-    Le script NasPull.ps1 décide lui-même s'il y a quelque chose à faire : il ne copie que si la
-    dernière réussite date de plus de 7 jours et si le NAS répond. Les autres jours, il se
-    termine en quelques secondes. Aucun mot de passe n'est demandé : la tâche tourne dans la
-    session ouverte de l'utilisateur, ce qui suffit pour un PC portable.
+    Pourquoi une copie locale : le 26/09/2026, la tâche planifiée et le script NasPull.ps1 (dans OneDrive)
+    ont disparu deux minutes après un démarrage de la tâche, sans intervention humaine. Deux suspects :
+    OneDrive (fichier synchronisé) et la protection Windows (script PowerShell caché lancé par une tâche).
+    Cette version lance la tâche depuis un dossier local, avec une fenêtre réduite plutôt que cachée,
+    et sous une description explicite.
+
+    Déclenchement : chaque jour à 10 h, plus à chaque ouverture de session (5 min de délai). Le script
+    NasPull.ps1 décide seul : il ne copie que si la dernière réussite date de plus de 7 jours et si le NAS
+    répond. Aucun mot de passe demandé : la tâche tourne dans la session ouverte de l'utilisateur.
+
+    Relancer ce script après toute modification des fichiers de nas-pull dans le dépôt : il recopie
+    les fichiers vers C:\RSR\Archivage\nas-pull.
 
 .EXAMPLE
     powershell -ExecutionPolicy Bypass -File .\Installer-Tache.ps1
 #>
 $ErrorActionPreference = 'Stop'
-$script = Join-Path (Split-Path -Parent $MyInvocation.MyCommand.Path) 'NasPull.ps1'
-if (-not (Test-Path $script)) { throw "NasPull.ps1 introuvable à côté de ce fichier" }
+$source = Split-Path -Parent $MyInvocation.MyCommand.Path
+$cible  = 'C:\RSR\Archivage\nas-pull'
 
+# 1. Copie locale des fichiers d'exécution (pas la doc, pas l'amorçage à usage unique)
+if (-not (Test-Path $cible)) { New-Item -ItemType Directory -Path $cible -Force | Out-Null }
+foreach ($f in 'NasPull.ps1', 'nas-pull.json', 'Garder-Eveille.ps1', 'Installer-Tache.ps1') {
+    Copy-Item (Join-Path $source $f) (Join-Path $cible $f) -Force
+}
+Set-Content (Join-Path $cible 'ORIGINE.txt') "Copie installée le $(Get-Date -Format 'dd/MM/yyyy HH:mm') depuis $source`nNe pas modifier ici : modifier dans le dépôt puis relancer Installer-Tache.ps1."
+$script = Join-Path $cible 'NasPull.ps1'
+Write-Host "Fichiers copiés dans $cible" -ForegroundColor Green
+
+# 2. Tâche planifiée
 $nom = 'RSR - Archivage - Copie NAS'
-$action = New-ScheduledTaskAction -Execute 'powershell.exe' `
-    -Argument ('-NoProfile -WindowStyle Hidden -ExecutionPolicy Bypass -File "{0}" -Action Sync' -f $script)
+$action = New-ScheduledTaskAction -Execute 'powershell.exe' -WorkingDirectory $cible `
+    -Argument ('-NoProfile -NonInteractive -WindowStyle Minimized -ExecutionPolicy Bypass -File "{0}" -Action Sync' -f $script)
 $triggers = @(
     (New-ScheduledTaskTrigger -Daily -At 10:00),
     (New-ScheduledTaskTrigger -AtLogOn -User $env:USERNAME)
@@ -30,7 +48,7 @@ $settings = New-ScheduledTaskSettingsSet -StartWhenAvailable -RunOnlyIfNetworkAv
 
 Unregister-ScheduledTask -TaskName $nom -Confirm:$false -ErrorAction SilentlyContinue
 Register-ScheduledTask -TaskName $nom -Action $action -Trigger $triggers -Settings $settings `
-    -Description 'Copie hebdomadaire des buckets Scaleway vers le NAS UniFi, quand le NAS est joignable.' | Out-Null
+    -Description "RSR Conseil, sauvegarde : copie hebdomadaire des buckets Scaleway vers le NAS UniFi (rclone, lecture seule côté cloud). Script : $script. Voir le dépôt rsrconseil/archivage-numerique." | Out-Null
 
 Write-Host "Tâche « $nom » installée." -ForegroundColor Green
 Get-ScheduledTask -TaskName $nom | Select-Object TaskName, State | Format-Table -AutoSize
