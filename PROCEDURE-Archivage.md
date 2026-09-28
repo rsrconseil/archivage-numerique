@@ -82,6 +82,7 @@ Consigner les trois résultats dans le README.
 - Le NAS UniFi refuse les noms de fichiers de plus de 143 caractères (accents comptant double). Ces fichiers sont dans le cloud mais pas sur le NAS ; la liste est dans `%LOCALAPPDATA%\RSR-Archivage\fichiers-a-renommer.txt`. Les raccourcir dans SharePoint.
 - Les instantanés du NAS peuvent être supprimés par un administrateur UniFi ; la protection contre un attaquant qui tient la console UniFi est le cloud versionné, pas le NAS.
 - La clé d'écriture du job Scaleway peut supprimer des objets ; le versioning conserve 90 jours toute version supprimée ou écrasée. Pour aller plus loin, activer le verrouillage d'objets (Object Lock) sur `rsr-archives`.
+- Avast, sur le PC de Raphaël, a mis le script de copie NAS en quarantaine une fois (26/09/2026). Si la tâche « RSR - Archivage - Copie NAS » disparaît du Planificateur ou si le contrôle mensuel affiche « en retard », vérifier la quarantaine d'Avast, ajouter une exception sur `C:\RSR\Archivage`, puis relancer `nas-pull\Installer-Tache.ps1`.
 - Le PC de Raphaël est le seul à alimenter le NAS. Un second PC du cabinet peut être équipé de la même tâche avec la même clé de lecture, sans conflit : le verrou et la règle des 7 jours s'en chargent.
 
 ## 8. Qui sait faire quoi
